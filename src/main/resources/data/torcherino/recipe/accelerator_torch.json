@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "C": "minecraft:clock",
+    "R": "minecraft:redstone",
+    "T": "minecraft:torch"
+  },
+  "pattern": [
+    " R ",
+    "CTC",
+    " R "
+  ],
+  "result": {
+    "count": 1,
+    "id": "torcherino:accelerator_torch"
+  }
+}

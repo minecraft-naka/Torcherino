@@ -1,0 +1,9 @@
+{
+  "block.torcherino.accelerator_torch": "Accelerator Torch",
+  "item.torcherino.accelerator_torch": "Accelerator Torch",
+  "message.torcherino.range.off": "Off",
+  "message.torcherino.range.area": "%1$sx%2$sx%3$s",
+  "message.torcherino.state.active": "Active",
+  "message.torcherino.state.paused": "Paused by redstone",
+  "message.torcherino.status": "Range: %1$s | Speed: %2$sx | %3$s"
+}

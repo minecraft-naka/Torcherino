@@ -1,2 +1,5 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Keep Unix scripts and repository text deterministic across platforms.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.png binary

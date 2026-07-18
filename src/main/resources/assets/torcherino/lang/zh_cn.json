@@ -1,0 +1,9 @@
+{
+  "block.torcherino.accelerator_torch": "加速火把",
+  "item.torcherino.accelerator_torch": "加速火把",
+  "message.torcherino.range.off": "关闭",
+  "message.torcherino.range.area": "%1$s × %2$s × %3$s",
+  "message.torcherino.state.active": "运行中",
+  "message.torcherino.state.paused": "已被红石暂停",
+  "message.torcherino.status": "作用范围：%1$s | 加速倍率：%2$s 倍 | %3$s"
+}

@@ -1,0 +1,45 @@
+name: Bug 报告
+description: 报告可复现的崩溃、行为或兼容性问题
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: 提交前请确认问题可在最新版本复现，并附上完整日志。
+  - type: input
+    id: mod_version
+    attributes:
+      label: Torcherino 版本
+      placeholder: 例如 1.0.2
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 运行环境
+      placeholder: Minecraft、Fabric Loader、Fabric API 与 Java 版本
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 说明预期行为和实际行为。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: 按顺序列出操作步骤。
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志
+      description: 可直接粘贴日志，内容会自动按代码格式显示。
+      render: text
+    validations:
+      required: true

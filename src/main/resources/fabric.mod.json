@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "torcherino",
+  "version": "${version}",
+  "name": "Torcherino",
+  "description": "A configurable accelerator torch for crops, machines, and other ticking blocks.",
+  "authors": [
+    "minecraft-naka contributors"
+  ],
+  "contributors": [
+    "Moze_Intel",
+    "sci4me",
+    "NinjaPhenix1"
+  ],
+  "contact": {
+    "homepage": "https://github.com/minecraft-naka/Torcherino",
+    "sources": "https://github.com/minecraft-naka/Torcherino",
+    "issues": "https://github.com/minecraft-naka/Torcherino/issues"
+  },
+  "license": [
+    "LGPL-3.0-or-later",
+    "LGPL-3.0-only"
+  ],
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.torcherino.Torcherino"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
