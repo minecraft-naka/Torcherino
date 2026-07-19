@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 
@@ -51,7 +52,9 @@ public final class AcceleratorTorchBlockEntity extends BlockEntity {
 
     private void accelerate(ServerLevel level, BlockPos torchPos) {
         int radius = RADII[rangeIndex];
-        int extraTicks = SPEED_MULTIPLIERS[speedIndex];
+        int multiplier = SPEED_MULTIPLIERS[speedIndex];
+        int extraBlockEntityTicks = AccelerationMath.extraBlockEntityTicks(multiplier);
+        int randomTickSpeed = level.getGameRules().get(GameRules.RANDOM_TICK_SPEED);
         int operations = 0;
         BlockPos.MutableBlockPos target = new BlockPos.MutableBlockPos();
 
@@ -75,7 +78,9 @@ public final class AcceleratorTorchBlockEntity extends BlockEntity {
                     }
 
                     if (targetState.isRandomlyTicking()) {
-                        for (int tick = 0; tick < extraTicks && operations < MAX_OPERATIONS_PER_TICK; tick++) {
+                        int extraRandomTicks = AccelerationMath.extraRandomTicks(
+                                multiplier, randomTickSpeed, level.getRandom().nextDouble());
+                        for (int tick = 0; tick < extraRandomTicks && operations < MAX_OPERATIONS_PER_TICK; tick++) {
                             if (level.getBlockState(target) != targetState) {
                                 break;
                             }
@@ -91,7 +96,7 @@ public final class AcceleratorTorchBlockEntity extends BlockEntity {
                         continue;
                     }
 
-                    for (int tick = 0; tick < extraTicks && operations < MAX_OPERATIONS_PER_TICK; tick++) {
+                    for (int tick = 0; tick < extraBlockEntityTicks && operations < MAX_OPERATIONS_PER_TICK; tick++) {
                         if (targetEntity.isRemoved()
                                 || level.getBlockEntity(target) != targetEntity
                                 || level.getBlockState(target) != targetState) {
